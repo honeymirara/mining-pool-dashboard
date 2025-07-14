@@ -1,6 +1,15 @@
 import { NextResponse } from 'next/server';
 
-const miningPools = [
+type MiningPool = {
+  id: string;
+  name: string;
+  hashrateTHs: number;
+  activeWorkers: number;
+  rejectRate: number;
+  status: 'online' | 'degraded' | 'offline';
+};
+
+const miningPools: MiningPool[] = [
   {
     id: 'pool-1',
     name: 'US East Pool',

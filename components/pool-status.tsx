@@ -1,7 +1,11 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
 import { Circle } from "lucide-react"
 
 export function PoolStatus() {
+  // Mock data
+  const status = "Online"
+  const uptime = "12:34:56"
+
   return (
     <Card>
       <CardHeader>
@@ -12,14 +16,14 @@ export function PoolStatus() {
         <CardDescription>Current pool status</CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="space-y-2">
+        <div className="flex flex-col gap-2">
           <div className="flex items-center justify-between">
-            <span className="text-sm">Status</span>
-            <span className="text-sm font-medium text-green-600">Online</span>
+            <span>Status</span>
+            <span className="text-green-500">{status}</span>
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-sm">Uptime</span>
-            <span className="text-sm font-mono">00:00:00</span>
+            <span>Uptime</span>
+            <span>{uptime}</span>
           </div>
         </div>
       </CardContent>
